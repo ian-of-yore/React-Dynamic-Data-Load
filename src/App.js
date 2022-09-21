@@ -5,10 +5,27 @@ import { useEffect, useState } from 'react';
 function App() {
   return (
     <div>
+      <Counter></Counter>
       <ExternalUsers></ExternalUsers>
     </div>
   );
 }
+
+function Counter() {
+  const [count, setCount] = useState(0);
+  const btnIncrease = () => setCount(count + 1);
+  const btnDecrease = () => setCount(count - 1);
+
+  return (
+    <div className="counter">
+      <h1>Counter: {count}</h1>
+      <button onClick={btnIncrease} className="btn">Increase</button>
+      <button onClick={btnDecrease} className="btn">Decrease</button>
+    </div>
+  )
+}
+
+
 
 function ExternalUsers() {
   const [users, setUsers] = useState([]);
